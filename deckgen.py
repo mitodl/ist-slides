@@ -51,6 +51,13 @@ def dest_path(path, deckname):
     )
 
 
+def get_all_decks(source):
+    return [
+        deckname[:-3] for deckname in os.listdir(source)
+        if deckname[-3:] == ".md"
+    ]
+
+
 def convert(source, destination, template, decks):
     """
     Convert slide deck markdown files to HTML by passing them through a given
@@ -111,7 +118,10 @@ class DeckConversionEventHandler(RegexMatchingEventHandler):
     """
     def __init__(self, source, destination, template):
         super(DeckConversionEventHandler, self).__init__(
-            regexes=["^{0}/[^\.]*.md$".format(source)],
+            regexes=[
+                "^{0}/[^\.]*.md$".format(source),
+                "^{0}$".format(template)
+            ],
             ignore_directories=True,
             case_sensitive=True
         )
@@ -120,18 +130,29 @@ class DeckConversionEventHandler(RegexMatchingEventHandler):
         self._destination = destination
         self._template = template
 
-    def do_conversion(self, event):
+    def do_conversion(self, decks):
         """
         Convert the markdown to HTML by passing it through the template.
         """
-        deck = event.src_path[len(self._source) + 1:-3]
-        convert(self._source, self._destination, self._template, [deck])
+        if type(decks) != list:
+            decks = [decks]
+
+        for deck in decks:
+            deck = deck[len(self._source) + 1:-3]
+
+        convert(self._source, self._destination, self._template, decks)
 
     def on_modified(self, event):
         """
         Process modified markdown files.
         """
-        self.do_conversion(event)
+        print event
+        if event.src_path == self._template:
+            decks = os.listdir(self._source)
+        else:
+            decks = event.src_path
+
+        self.do_conversion(decks)
 
     def on_created(self, event):
         """
@@ -146,8 +167,10 @@ def watch(source, destination, template):
     encountered.
     """
     observer = Observer()
-    event_handler = DeckConversionEventHandler(source, destination, template)
-    observer.schedule(event_handler, source, recursive=False)
+
+    handler = DeckConversionEventHandler(source, destination, template),
+    for watch_dir in [source]:
+        observer.schedule(handler, watch_dir, recursive=False)
 
     logging.info("Starting watcher..")
 
@@ -182,10 +205,7 @@ if __name__ == "__main__":
 
     if args['build']:
         if not decknames:
-            decknames = [
-                deckname[:-3] for deckname in os.listdir(source)
-                if deckname[-3:] == ".md"
-            ]
+            decknames = get_all_decks(source)
 
             if not decknames:
                 logging.info(
