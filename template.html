@@ -4,23 +4,101 @@
     <title>Slide deck</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <style type="text/css">
-      @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
-      @import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
-      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      @font-face {
+      font-family: 'Comfortaa';
+      src: url('../assets/fonts/comfortaa/ComfortaaBold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      }
 
-      body { font-family: 'Droid Serif'; }
+      @font-face {
+      font-family: 'Comfortaa';
+      src: url('../assets/fonts/comfortaa/ComfortaaLight.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+
+      @font-face {
+      font-family: 'Comfortaa';
+      src: url('../assets/fonts/comfortaa/ComfortaaRegular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+
+
+      @font-face {
+      font-family: 'Judson';
+      src: url('../assets/fonts/judson/JudsonMedium.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+
+      @font-face {
+      font-family: 'Judson';
+      src: url('../assets/fonts/judson/JudsonItalic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: italic;
+      }
+
+      @font-face {
+      font-family: 'Judson';
+      src: url('../assets/fonts/judson/JudsonBold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      }
+
+      @font-face {
+      font-family: 'Judson';
+      src: url('../assets/fonts/judson/JudsonBoldItalic.ttf') format('truetype');
+      font-weight: bold;
+      font-style: italic;
+      }
+
+
+      @font-face {
+      font-family: 'Anonymous Pro';
+      src: url('../assets/fonts/anonymous-pro/AnonymousProBold.ttf') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      }
+
+      @font-face {
+      font-family: 'Anonymous Pro';
+      src: url('@font-face {
+      font-family: 'Anonymous Pro';
+      src: url('../assets/fonts/anonymous-pro/AnonymousProBoldItalic.ttf') format('truetype');
+      font-weight: bold;
+      font-style: italic;
+      }
+
+      @font-face {
+      font-family: 'Anonymous Pro';
+      src: url('../assets/fonts/anonymous-pro/AnonymousProItalic.ttf') format('truetype');
+      font-weight: normal;
+      font-style: italic;
+      }
+
+      @font-face {
+      font-family: 'Anonymous Pro';
+      src: url('../assets/fonts/anonymous-pro/AnonymousProRegular.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      }
+
+
+      body { font-family: 'Judson'; }
       h1, h2, h3 {
-      font-family: 'Yanone Kaffeesatz';
+      font-family: 'Comfortaa';
       font-weight: normal;
       }
-      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code, .remark-inline-code { font-family: 'Anonymous Pro'; }
     </style>
   </head>
   <body>
     <textarea id="source">
       {{ deck_markdown }}
     </textarea>
-    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js" type="text/javascript">
+    <script src="../assets/js/remark.min.js" type="text/javascript">
     </script>
     <script type="text/javascript">
       var slideshow = remark.create();
