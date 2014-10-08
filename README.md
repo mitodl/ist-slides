@@ -8,28 +8,28 @@ How to build
 ------------
 1. Install the requirements: `pip install -r requirements.txt`
 2. Run the build script: `python deckgen.py build`
-3. To view the slide decks, navigate to the `decks` directory using a modern
+3. To view the slide decks, navigate to the **decks** directory using a modern
    browser.
 
 
 How it works
 ------------
-There are three important directories: `markdown`, `decks`, and `assets`.
+There are three important directories: **markdown**, **decks**, and **assets**.
 
-- `markdown` contains the source markdown files.
-- `decks` contains the resulting HTML slide decks.
-- `assets` contains assets used by the slide decks.
+- **markdown** contains the source markdown files.
+- **decks** contains the resulting HTML slide decks.
+- **assets** contains assets used by the slide decks.
 
 When building a slide deck, the build script just takes the markdown file from
-the `source` directory, inserts it into the `template.html` file, and saves the
-result in the `decks` directory. That is all.
+the **source** directory, inserts it into the **template.html** file, and saves
+the result in the **decks** directory. That is all.
 
 
 Using the watcher
 -----------------
-There is a filesystem watcher utility included in `deckgen.py` that can listen
-for changes to markdown files and convert them on the fly. This is convenient
-when editing slide decks.
+There is a filesystem watcher utility included in **deckgen.py** that can listen
+for changes to markdown files and convert them on the fly. *This is convenient
+when editing slide decks.*
 
 It can be started by running `deckgen.py watch`.
 
