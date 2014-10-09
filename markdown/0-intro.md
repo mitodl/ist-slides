@@ -1,10 +1,13 @@
-class: inverse, center, middle
+class: title, center, middle
 
 # Learning and Loving the
 # edX Technology Stack
 
 
 ### Carson Gee and Brandon DeRosier ###
+
+
+![MITx logo](../assets/mitx.png)
 
 ---
 

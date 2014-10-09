@@ -1,4 +1,4 @@
-class: inverse, center, middle
+class: title, center, middle
 
 # Basic Ansible Usage
 
