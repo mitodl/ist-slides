@@ -174,9 +174,10 @@ It's all in the script.
 # Upgrade solution
 
 You need to copy the `/edx/app/edx_ansible/server-vars.yml` file from
-the vagrant box to your host machine, then modify the then run the `edxapp` playbook as follows:
+the vagrant box to your host machine, then run the `edxapp` playbook as follows:
 
 ```terminal
 ansible-playbook edx-east/edxapp.yml -i mitxstack.ini -e @server-vars.yml -e \
 'edx_platform_version=mitx-hotfix-20140919' --tags deploy
 ```
+Get at http://goo.gl/PqpHJz
