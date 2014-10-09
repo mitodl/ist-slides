@@ -1,10 +1,17 @@
+class: title, center, middle
+
 # Learning and Loving the
 # edX Technology Stack
 
 
 ### Carson Gee and Brandon DeRosier ###
 
+
+![MITx logo](../assets/mitx.png)
+
 ---
+
+class: center, top-padding
 
 # What We Hope to Cover
 
@@ -13,6 +20,8 @@
 - Operations at scale (demo of tasks on full scale stack)
 
 ---
+
+class: center, top-padding
 
 # What You'll Need
 

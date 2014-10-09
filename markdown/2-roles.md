@@ -1,12 +1,13 @@
+class: title, center, middle
+
 # From Basics to Roles
 
-Jumping way ahead in ansible to roles, with some
-playbooks along the way.
+### Jumping way ahead in ansible to roles, with some playbooks along the way.
 
-- Logs are nice, but pretty logs are better
-  - Install Kibana/Logstash/Elasticsearch
-- Add some more MITx flavor to the mitxstack with gitreload
-  - sidebar on sysadmin dashboard
+- Logs are nice, but pretty logs are better:
+  Install Kibana/Logstash/Elasticsearch
+- Add some more MITx flavor to the mitxstack with gitreload:
+  Sidebar on the sysadmin dashboard
 
 ---
 
@@ -59,9 +60,7 @@ To run it with our overrides (to the port, which defaults to 80), we run
 ansible-playbook -i mitxstack.ini log_server.yml -e KIBANA_NGINX_PORT=10000
 ```
 
-Once complete, verify by going to:
-
-`http://192.168.33.10:10000`
+Once complete, verify by going to: http://192.168.33.10:10000
 
 ---
 
@@ -162,7 +161,7 @@ Notice that we skipped a couple tasks in that play, well let's run those!
 - Run play such that the default course gets imported when running gitreload
 - Run play such that only the course gets imported (no other tasks run)
 
-# Hints
+## Hints
 - `course_checkout`
 - tags
 
