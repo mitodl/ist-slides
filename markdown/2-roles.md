@@ -132,7 +132,7 @@ http://public.mitx.mit.edu/dist/gitreload.tar.gz
 - Download role to `edx/configuration/../../ansible_roles`
 - Run:
 ```terminal
-ansible-playbook -i mitxstack.ini run_role.yml -e role=gitreload'
+ansible-playbook -i mitxstack.ini run_role.yml -e role=gitreload
 ```
 - Have that fail at step `install ssh key for the content repos` since
   you likely don't have
