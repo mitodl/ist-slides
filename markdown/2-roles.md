@@ -1,3 +1,5 @@
+class: inverse, center, middle
+
 # From Basics to Roles
 
 Jumping way ahead in ansible to roles, with some

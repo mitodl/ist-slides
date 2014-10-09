@@ -1,6 +1,8 @@
+class: inverse, center, middle
+
 # Basic Ansible Usage
 
-We'll be covering:
+### We'll be covering:
 
 - Static inventory
 - one off commands

@@ -1,3 +1,5 @@
+class: inverse, center, middle
+
 # Learning and Loving the
 # edX Technology Stack
 
@@ -6,6 +8,8 @@
 
 ---
 
+class: center, top-padding
+
 # What We Hope to Cover
 
 - Basic ansible usage in our world
@@ -13,6 +17,8 @@
 - Operations at scale (demo of tasks on full scale stack)
 
 ---
+
+class: center, top-padding
 
 # What You'll Need
 
