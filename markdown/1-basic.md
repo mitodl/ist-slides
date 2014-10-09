@@ -147,3 +147,36 @@ sleep 1; done & tail -f tail.log
 ```
 
 Get at: http://goo.gl/blA64b
+
+---
+
+# Upgrade edx-platform without the script
+
+edx-platform, as well as the other components of the stack, can be easily
+updated using an update script which runs ansible. For example:
+
+```terminal
+sudo /edx/bin/update edx-platform mitx-release
+```
+
+Using ansible from outside your vagrant box, update your edx-platform to
+`mitx-hotfix-20140919`, our latest hotfix branch.
+
+## Hint:
+
+You'll need to copy `server-vars.yml` file from the vagrant box to
+your host machine.
+
+It's all in the script.
+
+---
+
+# Upgrade solution
+
+You need to copy the `/edx/app/edx_ansible/server-vars.yml` file from
+the vagrant box to your host machine, then modify the then run the `edxapp` playbook as follows:
+
+```terminal
+ansible-playbook edx-east/edxapp.yml -i mitxstack.ini -e @server-vars.yml -e \
+'edx_platform_version=mitx-hotfix-20140919' --tags deploy
+```

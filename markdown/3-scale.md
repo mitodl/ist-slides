@@ -1,6 +1,8 @@
+class: title, center, middle
+
 # Production Scale
 
-Not really different than mitxstack
+###Not really different than mitxstack
 
 Differences largely:
  - Caring about availability
@@ -60,7 +62,8 @@ time ../shell/app_deploy_os.sh -d -v prod rp-os p_edxapp.yml
 Find the master node with ansible
 
 ```terminal
-brandon will do this
+ansible all -i mongo1-az1-rp.mitx.mit.edu, -m shell \
+-a "echo 'rs.status()' | mongo" | grep -B 3 PRIMARY
 ```
 
 Failing mongo master and recovery
@@ -70,7 +73,6 @@ ansible 'tag_group_apps:tag_group_papps:&tag_env_rp-os' -i nova.py \
 -m shell -a '/edx/bin/supervisorctl restart edxapp:*;\
 /edx/bin/supervisorctl restart edxapp_worker:*;' -s -f 1
 ```
-
 
 ---
 

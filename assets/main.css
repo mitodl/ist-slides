@@ -95,7 +95,7 @@ a:hover {
     text-align: 'right';
 }
 
-li {
+ul li {
     list-style: square;
 }
 
