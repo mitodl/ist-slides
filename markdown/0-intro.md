@@ -20,3 +20,9 @@
 - ansible installed (1.5.5)
 - https://github.com/edx/configuration cloned
 - Some patience
+
+???
+
+Have them git clone edx/configuration and pip install it's
+requirements.  Also have them run everything from that folder as it
+will make things easier as we progress
